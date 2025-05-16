@@ -34,7 +34,7 @@ const moodTracks = {
     { title: "I'll Be Missing You", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
     { title: "Cold Little Heart", embed: "https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp" },
     { title: "Where Is My Mind", embed: "https://open.spotify.com/embed/track/2VxeLyX666F8uXCJ0dZF8B" },
-    { title: "Apocalypse - Cigarettes After Sex", embed: "https://open.spotify.com/track/3AVrVz5rK8Hrqo9YGiVGN5?si=b52280773a094581" },
+    { title: "Apocalypse - Cigarettes After Sex", embed: "https://open.spotify.com/embed/track/3AVrVz5rK8Hrqo9YGiVGN5" },
     { title: "In The Air Tonight", embed: "https://open.spotify.com/embed/track/18AXbzPzBS8Y3AkgSxzJPb" },
   ],
   PUMPED_UP: [
@@ -52,7 +52,7 @@ const moodTracks = {
     { title: "The Night We Met – Lord Huron", embed: "https://open.spotify.com/embed/track/2u8XzYh6VhXdiK8vL7zRbq" },
   ],
   SEXY: [
-    { title: "Earned It – The Weeknd", embed: "https://open.spotify.com/track/1cQ3LIkZE68pMSnPhZWXLu?si=9aa00366df0c418a" },
+    { title: "Earned It – The Weeknd", embed: "https://open.spotify.com/embed/track/1cQ3LIkZE68pMSnPhZWXLu" },
     { title: "Wicked Games – The Weeknd", embed: "https://open.spotify.com/embed/track/7fBv7CLKzipRk6EC6TWHOB" },
     { title: "Versace on the Floor – Bruno Mars", embed: "https://open.spotify.com/embed/track/4P0dddbxPil35MNN9G2MEX" },
     { title: "Pony – Ginuwine", embed: "https://open.spotify.com/embed/track/3qchDNrT5vwej0vzrQbOaM" },
