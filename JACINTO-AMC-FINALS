@@ -129,8 +129,8 @@ export default function App() {
           <Text style={styles.header}>GROOVE 🎧 TUNES</Text>
 
           <View style={styles.socialLinks}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://facebook.com')}><Text style={styles.link}>Facebook</Text></TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('https://instagram.com')}><Text style={styles.link}>Instagram</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL(':https://www.facebook.com/nosyaj.otnicaj.9')}><Text style={styles.link}>Facebook</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/xviijayson/')}><Text style={styles.link}>Instagram</Text></TouchableOpacity>
           </View>
 
           <TextInput
