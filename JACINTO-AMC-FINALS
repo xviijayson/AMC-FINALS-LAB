@@ -90,6 +90,7 @@ NOSTALGIC: [
   { title: "Every Breath You Take – The Police", embed: "https://open.spotify.com/embed/track/5Z01UMMf7V1o0MzF86s6WJ" },
 ],
 };
+
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
