@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -34,38 +34,32 @@ const moodTracks = {
   HAPPY: [
     { title: "Happy – Pharrell Williams", embed: "https://open.spotify.com/embed/track/60nZcImufyMA1MKQY3dcCH" },
     { title: "Good as Hell – Lizzo", embed: "https://open.spotify.com/embed/track/0k664IuFwVP557Gnx7RhIl" },
-    { title: "Can't Stop The Feeling – JT", embed: "https://open.spotify.com/embed/track/6JV2JOEocMgcZxYSZelKcc" },
-    { title: "Walking on Sunshine", embed: "https://open.spotify.com/embed/track/3DQVGC1MFT3FGM3ZLbm1Nf" },
-    { title: "Uptown Funk – Bruno Mars", embed: "https://open.spotify.com/embed/track/32OlwWuMpZ6b0aN2RZOeMS" },
-    { title: "Good Vibrations – The Beach Boys", embed: "https://open.spotify.com/embed/track/1z4g0g0g0g0g0g0g0g0g0g" },
-    { title: "Shake It Off – Taylor Swift", embed: "https://open.spotify.com/embed/track/0J2sPq0g0g0g0g0g0g0g0g" },
-    { title: "Walking on Sunshine – Katrina and the Waves", embed: "https://open.spotify.com/embed/track/3DQVGC1MFT3FGM3ZLbm1Nf" },
-    { title: "Best Day of My Life – American Authors", embed: "https://open.spotify.com/embed/track/0J2sPq0g0g0g0g0g0g0g0g" },
-    { title: "I Gotta Feeling – The Black Eyed Peas", embed: "https://open.spotify.com/embed/track/0J2sPq0g0g0g0g0g0g0g0g" },
+    { title: "Can't Stop The Feeling – Justin Timberlake", embed: "https://open.spotify.com/embed/track/6JV2JOEocMgcZxYSZelKcc" },
+    { title: "Walking on Sunshine – Katrina & The Waves", embed: "https://open.spotify.com/embed/track/3DQVGC1MFT3FGM3ZLbm1Nf" },
+    { title: "Uptown Funk – Mark Ronson ft. Bruno Mars", embed: "https://open.spotify.com/embed/track/32OlwWuMpZ6b0aN2RZOeMS" },
+    { title: "Shake It Off – Taylor Swift", embed: "https://open.spotify.com/embed/track/5WfhX6jL5yX2vZxjAeGfLi" },
+    { title: "I Gotta Feeling – Black Eyed Peas", embed: "https://open.spotify.com/embed/track/1rqqCSm0Qe4I9rUvWncaom" },
+    { title: "Best Day of My Life – American Authors", embed: "https://open.spotify.com/embed/track/3M3wTTCDwicRubwMyHyEDy" },
   ],
   ENERGIZED: [
-    { title: "Can't Hold Us – Macklemore", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Stronger – Kanye West", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Eye of the Tiger – Survivor", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Thunder – Imagine Dragons", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "We Will Rock You – Queen", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Don't Stop Believin' – Journey", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Wake Me Up – Avicii", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Pump It – The Black Eyed Peas", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Titanium – David Guetta ft. Sia", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
-    { title: "Levels – Avicii", embed: "https://open.spotify.com/embed/track/0c6Y8g1g0g0g0g0g0g0g0g" },
+    { title: "Stronger – Kanye West", embed: "https://open.spotify.com/embed/track/5FjWoFZyZlI7aDk5g4sroW" },
+    { title: "Power – Kanye West", embed: "https://open.spotify.com/embed/track/4cAgkb0ifwn0FSHGXnr4F6" },
+    { title: "Lose Yourself – Eminem", embed: "https://open.spotify.com/embed/track/1bDbXMyjaUIooNwFE9wn0N" },
+    { title: "Believer – Imagine Dragons", embed: "https://open.spotify.com/embed/track/0pqnGHJpmpxLKifKRmU6WP" },
+    { title: "Can't Hold Us – Macklemore & Ryan Lewis", embed: "https://open.spotify.com/embed/track/2xLMifQCjDGFmkHkpNLD9h" },
+    { title: "Till I Collapse – Eminem", embed: "https://open.spotify.com/embed/track/1v6CvBspzGjeZ3IVCgCfFv" },
+    { title: "Remember the Name – Fort Minor", embed: "https://open.spotify.com/embed/track/5nNmj1cLH3r4aA4XDJ2bgY" },
+    { title: "Thunderstruck – AC/DC", embed: "https://open.spotify.com/embed/track/57bgtoPSgt236HzfBOd8kj" },
   ],
   ROMANTIC: [
-    { title: "Perfect – Ed Sheeran", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "All of Me – John Legend", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "A Thousand Years – Christina Perri", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "Can't Help Falling in Love – Elvis Presley", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "I Will Always Love You – Whitney Houston", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "Unchained Melody – The Righteous Brothers", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "At Last – Etta James", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "Your Song – Elton John", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "Thinking Out Loud – Ed Sheeran", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
-    { title: "Make You Feel My Love – Adele", embed: "https://open.spotify.com/embed/track/0VjIjW4z4g0g0g0g0g0g0g" },
+    { title: "Perfect – Ed Sheeran", embed: "https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" },
+    { title: "All of Me – John Legend", embed: "https://open.spotify.com/embed/track/3U4isOIWM3VvDubwSI3y7a" },
+    { title: "A Thousand Years – Christina Perri", embed: "https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXk3q" },
+    { title: "Can't Help Falling in Love – Elvis Presley", embed: "https://open.spotify.com/embed/track/44AyOl4qVkzS48vBsbNXaC" },
+    { title: "I Will Always Love You – Whitney Houston", embed: "https://open.spotify.com/embed/track/6GG73tzZ4JFCrGifqZyrmD" },
+    { title: "My Heart Will Go On – Celine Dion", embed: "https://open.spotify.com/embed/track/4M4iqwLZtY3sN39kBpZtBK" },
+    { title: "Just The Way You Are – Bruno Mars", embed: "https://open.spotify.com/embed/track/0ptlfJfwGTy0Yvrk14JK1I" },
+    { title: "Thinking Out Loud – Ed Sheeran", embed: "https://open.spotify.com/embed/track/34gCuhDGsG4bRPIf9bb02f" },
   ],
   RELAXING: [
     { title: "Electra – Airstream", embed: "https://open.spotify.com/embed/track/2ZsWcZ2Zq3c5vZzZzZzZzZ" },
@@ -73,23 +67,19 @@ const moodTracks = {
     { title: "Holocene – Bon Iver", embed: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn" },
     { title: "Pure Shores – All Saints", embed: "https://open.spotify.com/embed/track/1cTZMwcBJT0Ka3UJPXOeeN" },
     { title: "Someone Like You – Adele", embed: "https://open.spotify.com/embed/track/4kflIGfjdZJW4ot2ioixTB" },
-    { title: "River – Leon Bridges", embed: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn" },
-    { title: "Breathe Me – Sia", embed: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn" },
-    { title: "Skinny Love – Bon Iver", embed: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn" },
-    { title: "The Night We Met – Lord Huron", embed: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn" },
-    { title: "Let Her Go – Passenger", embed: "https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn" },
+    { title: "Ocean Eyes – Billie Eilish", embed: "https://open.spotify.com/embed/track/7hDVYcQq6MxkdJGweuCtl9" },
+    { title: "Bloom – The Paper Kites", embed: "https://open.spotify.com/embed/track/5nNmj1cLH3r4aA4XDJ2bgY" },
+    { title: "River Flows In You – Yiruma", embed: "https://open.spotify.com/embed/track/6C6X1DqC1pKzF8QZzE1M2G" },
   ],
   DREAMY: [
-    { title: "I'll Be Missing You", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
-    { title: "Cold Little Heart", embed: "https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp" },
-    { title: "Where Is My Mind", embed: "https://open.spotify.com/embed/track/2VxeLyX666F8uXCJ0dZF8B" },
-    { title: "Apocalypse - Cigarettes After Sex", embed: "https://open.spotify.com/embed/track/3AVrVz5rK8Hrqo9YGiVGN5" },
-    { title: "In The Air Tonight", embed: "https://open.spotify.com/embed/track/18AXbzPzBS8Y3AkgSxzJPb" },
-    { title: "Dreams – Fleetwood Mac", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
-    { title: "Landslide – Fleetwood Mac", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
-    { title: "The Night We Met – Lord Huron", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
-    { title: "Slow Burn – Kacey Musgraves", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
-    { title: "Such a Simple Thing – Ray LaMontagne", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
+    { title: "I'll Be Missing You – Puff Daddy", embed: "https://open.spotify.com/embed/track/7H6ev70Weq6DdpZyyTmUXk" },
+    { title: "Cold Little Heart – Michael Kiwanuka", embed: "https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp" },
+    { title: "Where Is My Mind – Pixies", embed: "https://open.spotify.com/embed/track/2VxeLyX666F8uXCJ0dZF8B" },
+    { title: "Apocalypse – Cigarettes After Sex", embed: "https://open.spotify.com/embed/track/3AVrVz5rK8Hrqo9YGiVGN5" },
+    { title: "In The Air Tonight – Phil Collins", embed: "https://open.spotify.com/embed/track/18AXbzPzBS8Y3AkgSxzJPb" },
+    { title: "Breathe Me – Sia", embed: "https://open.spotify.com/embed/track/2m1hi0nfMR9vdGCkO9UfVp" },
+    { title: "Space Song – Beach House", embed: "https://open.spotify.com/embed/track/1nL3Z4bZxveCVLZzexCtcf" },
+    { title: "Retrograde – James Blake", embed: "https://open.spotify.com/embed/track/7r4LrNkXydfXcLJp4Z1vcq" },
   ],
   SAD: [
     { title: "Someone Like You – Adele", embed: "https://open.spotify.com/embed/track/4kflIGfjdZJW4ot2ioixTB" },
@@ -97,23 +87,19 @@ const moodTracks = {
     { title: "When I Was Your Man – Bruno Mars", embed: "https://open.spotify.com/embed/track/0y60itmpH0aPKsFiGxmtnh" },
     { title: "Fix You – Coldplay", embed: "https://open.spotify.com/embed/track/6KuQTIu1KoTTkLXKrwlLPV" },
     { title: "The Night We Met – Lord Huron", embed: "https://open.spotify.com/embed/track/2u8XzYh6VhXdiK8vL7zRbq" },
-    { title: "Tears Dry On Their Own – Amy Winehouse", embed: "https://open.spotify.com/embed/track/4kflIGfjdZJW4ot2ioixTB" },
-    { title: "Back to December – Taylor Swift", embed: "https://open.spotify.com/embed/track/4Y1fTcf3dYJiRz6C3nYhWW" },
-    { title: "Hurt – Johnny Cash", embed: "https://open.spotify.com/embed/track/0y60itmpH0aPKsFiGxmtnh" },
-    { title: "Someone You Loved – Lewis Capaldi", embed: "https://open.spotify.com/embed/track/6KuQTIu1KoTTkLXKrwlLPV" },
-    { title: "Fix You – Coldplay", embed: "https://open.spotify.com/embed/track/2u8XzYh6VhXdiK8vL7zRbq" },
+    { title: "Skinny Love – Bon Iver", embed: "https://open.spotify.com/embed/track/3Hvu1pq89D4R0lyPBoujSv" },
+    { title: "Liability – Lorde", embed: "https://open.spotify.com/embed/track/5jP8ySXz8jVfq5aZueI3GQ" },
+    { title: "With Or Without You – U2", embed: "https://open.spotify.com/embed/track/0I6yF2x64hVinzxJIF9w6n" },
   ],
   SEXY: [
     { title: "Call Out My Name – The Weeknd", embed: "https://open.spotify.com/embed/track/2XU0oxnq2qxCpomAAuJY8K" },
     { title: "Redbone – Childish Gambino", embed: "https://open.spotify.com/embed/track/3UmaczJpikHgJFyBTAJVoz" },
-    { title: "Earned It (Fifty Shades of Grey) – The Weeknd", embed: "https://open.spotify.com/embed/track/1cQ3LIkZE68pMSnPhZWXLu" },
+    { title: "Earned It – The Weeknd", embed: "https://open.spotify.com/embed/track/1cQ3LIkZE68pMSnPhZWXLu" },
     { title: "Lotus Flower – Radiohead", embed: "https://open.spotify.com/embed/track/6G8kHiVZlDPOmcUUMqGgGj" },
     { title: "Adorn – Miguel", embed: "https://open.spotify.com/embed/track/0FnbfN1X2o7Yqf4Hl5w0iJ" },
-    { title: "Slow Hands – Niall Horan", embed: "https://open.spotify.com/embed/track/2XU0oxnq2qxCpomAAuJY8K" },
-    { title: "Earned It – The Weeknd", embed: "https://open.spotify.com/embed/track/3UmaczJpikHgJFyBTAJVoz" },
-    { title: "Come Away With Me – Norah Jones", embed: "https://open.spotify.com/embed/track/1cQ3LIkZE68pMSnPhZWXLu" },
-    { title: "All of Me – John Legend", embed: "https://open.spotify.com/embed/track/6G8kHiVZlDPOmcUUMqGgGj" },
-    { title: "Best Part – Daniel Caesar ft. H.E.R.", embed: "https://open.spotify.com/embed/track/0FnbfN1X2o7Yqf4Hl5w0iJ" },
+    { title: "Wicked Games – The Weeknd", embed: "https://open.spotify.com/embed/track/2G7V7zsVDxg1yRsu7Ew9RJ" },
+    { title: "Love Me Like You Do – Ellie Goulding", embed: "https://open.spotify.com/embed/track/7GjG91tyHQNGEHzKJ9gjgn" },
+    { title: "Pony – Ginuwine", embed: "https://open.spotify.com/embed/track/3E6xrwGNmfNn5uSVDwvmcY" },
   ],
   FOCUSED: [
     { title: "Weightless – Marconi Union", embed: "https://open.spotify.com/embed/track/6kkwzB6hXLIONkEk9JciA6" },
@@ -121,11 +107,9 @@ const moodTracks = {
     { title: "Kusanagi – Oatmello", embed: "https://open.spotify.com/embed/track/5APkeOxFMV3oEo2pR9tgS0" },
     { title: "Luv(sic) Part 3 – Nujabes", embed: "https://open.spotify.com/embed/track/4xlpJ99yL9xYQtzG6c3hwk" },
     { title: "Drift – Nosaj Thing", embed: "https://open.spotify.com/embed/track/2uOpFzvNQqFAWh8lZxosX0" },
-    { title: "Cold Little Heart – Michael Kiwanuka", embed: "https://open.spotify.com/embed/track/6kkwzB6hXLIONkEk9JciA6" },
-    { title: "Weightless – Marconi Union", embed: "https://open.spotify.com/embed/track/4xsum9mtqZB1pUuhw6wCQo" },
-    { title: "Breathe – Pink Floyd", embed: "https://open.spotify.com/embed/track/5APkeOxFMV3oEo2pR9tgS0" },
-    { title: "Intro – The xx", embed: "https://open.spotify.com/embed/track/4xlpJ99yL9xYQtzG6c3hwk" },
-    { title: "Sunset Lover – Petit Biscuit", embed: "https://open.spotify.com/embed/track/2uOpFzvNQqFAWh8lZxosX0" },
+    { title: "Sunset Lover – Petit Biscuit", embed: "https://open.spotify.com/embed/track/6L89mwZXSOwYl76YXfX13s" },
+    { title: "Cold Little Heart – Michael Kiwanuka", embed: "https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp" },
+    { title: "Resonance – HOME", embed: "https://open.spotify.com/embed/track/4IVAbR2w4JJNJDDRFP3E83" },
   ],
   ANGRY: [
     { title: "Psychosocial – Slipknot", embed: "https://open.spotify.com/embed/track/2MvIMgtWyK88OiPi0J8Dg3" },
@@ -133,11 +117,9 @@ const moodTracks = {
     { title: "Down with the Sickness – Disturbed", embed: "https://open.spotify.com/embed/track/79qOmULc1p6IP1do5kgwg7" },
     { title: "Bodies – Drowning Pool", embed: "https://open.spotify.com/embed/track/3xktQXIr1OD3ENc19viwDP" },
     { title: "Freak on a Leash – Korn", embed: "https://open.spotify.com/embed/track/7B9S4RiRczdw1B9ddjpFe8" },
-    { title: "Killing in the Name – Rage Against the Machine", embed: "https://open.spotify.com/embed/track/2MvIMgtWyK88OiPi0J8Dg3" },
-    { title: "Duality – Slipknot", embed: "https://open.spotify.com/embed/track/7kwiwQhWRBSP1PJv4ZFJUK" },
-    { title: "Last Resort – Papa Roach", embed: "https://open.spotify.com/embed/track/79qOmULc1p6IP1do5kgwg7" },
-    { title: "Break Stuff – Limp Bizkit", embed: "https://open.spotify.com/embed/track/3xktQXIr1OD3ENc19viwDP" },
-    { title: "Bodies – Drowning Pool", embed: "https://open.spotify.com/embed/track/3xktQXIr1OD3ENc19viwDP" },
+    { title: "Break Stuff – Limp Bizkit", embed: "https://open.spotify.com/embed/track/6o5sOj3OqW0FNNvF6zxbXh" },
+    { title: "Killing in the Name – Rage Against The Machine", embed: "https://open.spotify.com/embed/track/0Ufd2H4HhrlE3lTqEwF07c" },
+    { title: "Duality – Slipknot", embed: "https://open.spotify.com/embed/track/3vT3c9dzSPx7v79L1ZD12F" },
   ],
   NOSTALGIC: [
     { title: "Bohemian Rhapsody – Queen", embed: "https://open.spotify.com/embed/track/7tFiyTwD0nx5a1eklYtX2J" },
@@ -145,13 +127,12 @@ const moodTracks = {
     { title: "Africa – Toto", embed: "https://open.spotify.com/embed/track/2374M0fQpWi3dLnB54qaLX" },
     { title: "Smells Like Teen Spirit – Nirvana", embed: "https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" },
     { title: "Every Breath You Take – The Police", embed: "https://open.spotify.com/embed/track/5Z01UMMf7V1o0MzF86s6WJ" },
-    { title: "Sweet Child o' Mine – Guns N' Roses", embed: "https://open.spotify.com/embed/track/7tFiyTwD0nx5a1eklYtX2J" },
-    { title: "Livin' on a Prayer – Bon Jovi", embed: "https://open.spotify.com/embed/track/2WfaOiMkCvy7F5fcp2zZ8L" },
-    { title: "Wonderwall – Oasis", embed: "https://open.spotify.com/embed/track/2374M0fQpWi3dLnB54qaLX" },
-    { title: "Come As You Are – Nirvana", embed: "https://open.spotify.com/embed/track/5ghIJDpPoe3CfHMGu71E6T" },
-    { title: "With or Without You – U2", embed: "https://open.spotify.com/embed/track/5Z01UMMf7V1o0MzF86s6WJ" },
+    { title: "Sweet Child O' Mine – Guns N' Roses", embed: "https://open.spotify.com/embed/track/7o2CTH4ctstm8TNelqjb51" },
+    { title: "Livin' on a Prayer – Bon Jovi", embed: "https://open.spotify.com/embed/track/37ZJ0p5Jm13JPevGcx4SkF" },
+    { title: "Billie Jean – Michael Jackson", embed: "https://open.spotify.com/embed/track/3S0OXQeoh0w6AY8WQVckRW" },
   ],
 };
+
 
 const isPasswordStrong = (password) => {
   const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
@@ -238,11 +219,7 @@ function HomeScreen({ navigation, isLoggedIn, setIsLoggedIn }) {
       <Text style={styles.sectionTitle}>FEATURED MOODS</Text>
       <ScrollView contentContainerStyle={styles.grid}>
         {filteredMoods.map((mood, index) => (
-          <TouchableOpacity 
-            key={index} 
-            style={styles.moodBox} 
-            onPress={() => navigation.navigate('Mood', { mood: mood.title })}
-          >
+          <TouchableOpacity key={index} style={styles.moodBox} onPress={() => navigation.navigate('Mood', { mood: mood.title })}>
             <Image source={{ uri: mood.image }} style={styles.moodImage} />
             <Text style={styles.moodText}>{mood.title}</Text>
           </TouchableOpacity>
@@ -259,57 +236,26 @@ function HomeScreen({ navigation, isLoggedIn, setIsLoggedIn }) {
 function MoodScreen({ route, navigation }) {
   const { mood } = route.params;
   const tracks = moodTracks[mood];
-  const [quote, setQuote] = useState('');
-  const scrollViewRef = useRef(null);
-
-  const moodQuotes = {
-    HAPPY: "Happiness is not something ready-made. It comes from your own actions.",
-    ENERGIZED: "Energy and persistence conquer all things.",
-    ROMANTIC: "Love is composed of a single soul inhabiting two bodies.",
-    RELAXING: "Sometimes the most productive thing you can do is relax.",
-    DREAMY: "Dream big and dare to fail.",
-    SAD: "Tears are words the heart can't express.",
-    SEXY: "Confidence is the sexiest thing a woman can have.",
-    FOCUSED: "Focus on the journey, not the destination.",
-    ANGRY: "For every minute you are angry, you lose sixty seconds of happiness.",
-    NOSTALGIC: "Nostalgia is a file that removes the rough edges from the good old days."
-  };
-
-  React.useEffect(() => {
-    setQuote(moodQuotes[mood] || '');
-  }, [mood]);
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>{mood} Playlist</Text>
-      {quote ? <Text style={styles.quoteText}>{quote}</Text> : null}
-      <ScrollView ref={scrollViewRef} contentContainerStyle={styles.grid}>
-        {tracks ? (
-          tracks.map((track, index) => (
-            <View key={index} style={{ height: 80, marginBottom: 10 }}>
-              <WebView
-                source={{ uri: track.embed }}
-                style={{ flex: 1 }}
-                javaScriptEnabled
-                domStorageEnabled
-              />
-            </View>
-          ))
-        ) : (
-          <Text style={styles.noTracksText}>No tracks available for this mood.</Text>
-        )}
-      </ScrollView>
-      <TouchableOpacity 
-        style={styles.homeButton} 
-        onPress={() => navigation.navigate('Home')}
-      >
+      {tracks ? (
+        tracks.map((track, index) => (
+          <View key={index} style={{ height: 80, marginBottom: 10 }}>
+            <WebView
+              source={{ uri: track.embed }}
+              style={{ flex: 1 }}
+              javaScriptEnabled
+              domStorageEnabled
+            />
+          </View>
+        ))
+      ) : (
+        <Text style={styles.noTracksText}>No tracks available for this mood.</Text>
+      )}
+      <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.homeButtonText}>Back to Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity 
-        style={styles.scrollButton} 
-        onPress={() => scrollViewRef.current.scrollTo({ y: 0, animated: true })}
-      >
-        <Text style={styles.scrollButtonText}>Scroll to Top</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -538,24 +484,6 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     marginTop: 20,
-  },
-  quoteText: {
-    color: '#1DB954',
-    fontStyle: 'italic',
-    textAlign: 'center',
-    marginVertical: 10,
-  },
-  scrollButton: {
-    backgroundColor: '#1DB954',
-    padding: 10,
-    borderRadius: 10,
-    marginTop: 20,
-    alignSelf: 'center',
-  },
-  scrollButtonText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold',
   },
 });
 
