@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  Alert,
-  SafeAreaView,
-  Linking,
+import {View,Text,StyleSheet,ScrollView,Image,TouchableOpacity,TextInput,Alert,SafeAreaView,Linking,
 } from 'react-native';
 import { WebView } from 'react-native-webview';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native'; //wraps whole app to enable navigation
+import { createNativeStackNavigator } from '@react-navigation/native-stack';  //stack based navigation
 
 const Stack = createNativeStackNavigator();
 
@@ -136,7 +126,7 @@ const moodTracks = {
 
 const isPasswordStrong = (password) => {
   const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
-  return strongRegex.test(password);
+  return strongRegex.test(password);     
 };
 
 function HomeScreen({ navigation, isLoggedIn, setIsLoggedIn }) {
